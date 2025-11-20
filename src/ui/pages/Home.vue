@@ -1,119 +1,84 @@
 <template>
-    <div class="Topbar">Topbar</div>
-    <div class="Sidebar">
-        <div class="LayerPanel"></div>
-        <div class="ToolPanel"></div>
-    </div>
-    <div class="Main">
+    <div class="background">
+    <Topbar class="home-topbar"/>
+    <Sidebar class="home-sidebar"/>
+    <main class="home-main">
         
-        <div class="MapContainer">
-            <div class="Infobar">
-                Infobar
-                <!-- <button class="btn-showInfo" @click="showInfo = true"></button> -->
+        <div class="home-mapcontainer">
+            <div class="home-infobar">
+                <Infobar/>
             </div>
-            <div class="MapView">MapView</div>
-            <div class="MapToolbar">MApToolbar</div>
-            <div class="MapStatusCard">MapStatusCard</div>
+            <div class="home-map-area">
+                <MapArea/>
+            </div>
         </div>
+    </main>
+    
     </div>
-    
-    
 </template>
 
 <script setup lang="ts" name="Home">
+    import Infobar from '@/ui/components/Infobar.vue';
+    import Sidebar from '@/ui/components/Sidebar.vue';
+    import Topbar from '@/ui/components/Topbar.vue';
+    import MapArea from '@/map/components/MapArea.vue';
 
 </script>
 
 <style scoped>
-    .Topbar {
+    .home-topbar {
+        position: fixed;
+        top: 0;
+        left: 245px;
+        height: 54px;
+        width: 100%;
+        /* border-bottom: 1px solid #ddd; */
+    }
+
+    .home-sidebar {
         position: fixed;
         top: 0;
         left: 0;
-        height: 70px;
-        width: 100%;
-        background-color: #f5f5f5;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .Sidebar {
-        position: fixed;
-        top: 70px;
-        left: 0;
         bottom: 0;
-        width: 240px;
-        padding:10px;
-        background-color: rgb(154, 210, 191);
+        width: 245px;
     }
 
-    .LayerPanel{
-        position: relative;
-        height: 40%;
-        background-color: #d1a3f9;
-    }
-
-    .ToolPanel{
-        position: relative;
-        height: 55%;
-        margin-top: 5%;
-        background-color: #f9e5a3;
-    }
-    .Main {
+    .home-main {
         display: flex;
-        margin-left: 240px;
-        margin-top: 70px;
-        padding: 10px;
+        flex-direction: column;
+        margin-left: 245px;
+        margin-top: 54px;
+        height: calc(100vh - 54px);
         background-color: #8c8c8c;
         /* 让元素全屏，但是去除70px */
-        min-height: calc(100vh - 70px);
+        /* min-height: calc(100vh - 70px); */
     }
 
-    .MapContainer {
+    .home-mapcontainer {
         position: relative;
-        width: 100%;
-        min-height: calc(100vh - 70px - 20px);
+        flex: 1;
+        /* min-height: calc(100vh - 70px - 20px); */
         /* 20px是Main的padding */
         background-color: #bfbfbf;
         overflow: hidden;
         z-index: 0;
     }
 
-    .Infobar {
+    .home-map-area {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 80%;
-        height: 100px;
-        background-color: #b33636;
-        z-index: 2;
-    }
-
-    /* 高度由MapContainer控制 */
-    .MapView {
-        position: absolute;
+        flex: 1;
         inset: 0;
-        /* width: 100%;
-        height: 100%; */
-        background-color: #69a6c7;
         z-index: 1;
     }
 
-    .MapToolbar{
+    .home-infobar {
         position: absolute;
-        bottom: 20px;
-        left: 20px;
-        width: 200px;
-        height: 50px;
-        background-color: #c7a169;
+        top: 20px;
+        left: 40px;
+        width: 300px;
+        height: 60px;
         z-index: 2;
     }
 
-    .MapStatusCard{
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        width: 150px;
-        height: 100px;
-        background-color: #69c77e;
-        z-index: 2;
-    }
+
 </style>
