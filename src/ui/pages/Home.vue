@@ -75,7 +75,7 @@
         position: absolute;
         top: 20px;
         left: 40px;
-        width: 300px;
+        width: 800px;
         height: 60px;
         z-index: 2;
     }

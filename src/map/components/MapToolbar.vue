@@ -1,10 +1,12 @@
 <template>
     <div class="map-toolbar">
-        MapToolbar
+        缩放 
+        移动 
+        绘制 
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 
 </script>
 
@@ -12,9 +14,16 @@
     .map-toolbar {
         width: 100%;
         height: 100%;
-        background: #cfd7dd;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 8px;
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+        
+        
+        
+        /* backdrop-filter: blur(6px); */
+        background-color: rgba(255, 255, 255, 0.25);
+        /* background: var(--panel-soft); */
+        border-width: var(--panel-border-width);
+        border-style: var(--panel-border-style);
+        border-color: var(--panel-border-color);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-soft);
     }
 </style>

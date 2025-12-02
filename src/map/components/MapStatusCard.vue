@@ -1,20 +1,25 @@
 <template>
     <div class="map-status-card">
-        MapStatusCard
+        <span> 坐标 {{ mapStore.center }}</span>
+        <span> 缩放级别 {{ mapStore.zoom }}</span>
+        <span> 其他信息 </span>
     </div>
 </template>
 
-<script setup lang="ts">
-
+<script setup >
+    import { useMapStore } from '@/store/useMapStore';
+    const mapStore = useMapStore();
 </script>
 
 <style scoped>
     .map-status-card {
         width: 100%;
         height: 100%;
-        background-color: #cfd7dd;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 8px;
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+        background-color: var(--bg-glass);
+        border-width: var(--panel-border-width);
+        border-style: var(--panel-border-style);
+        border-color: var(--panel-border-color);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-soft);
     }
 </style>

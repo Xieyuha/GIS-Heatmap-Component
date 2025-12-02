@@ -6,7 +6,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup >
     import MapView from '@/map/components/MapView.vue';
     import MapToolbar from '@/map/components/MapToolbar.vue';
     import MapStatusCard from '@/map/components/MapStatusCard.vue';
